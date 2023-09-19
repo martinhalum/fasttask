@@ -1,0 +1,8 @@
+/**
+*
+* DetailPage Config
+*
+*/
+
+
+
