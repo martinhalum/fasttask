@@ -1,13 +1,6 @@
-/**
- *
- * CalenDarHeaDer Config
- *
- */
+import {WeekType} from '@organisms/CalendarHeader/types';
 
-import {WeekType} from '../types';
-
-export const DEFAULT_MONTH = 'September';
-export const DEFAULT_DATE = '19';
+export const DAY_NAME = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 export const DEFAULT_WEEK: WeekType[] = [
   {
     dayLabel: 'Sun',

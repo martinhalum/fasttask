@@ -16,23 +16,23 @@ import CalendarHeaderStyles from './styles';
 import type {PropsType} from './types';
 
 function CalendarHeader({
-  MonthTitle,
-  WeekData,
-  CurrentDate,
+  monthTitle,
+  weekData,
+  currentDate,
 }: PropsType): React.ReactElement {
   return (
     <View style={CalendarHeaderStyles.Container}>
-      <Text style={CalendarHeaderStyles.HeadingLabel}>{MonthTitle}</Text>
+      <Text style={CalendarHeaderStyles.HeadingLabel}>{monthTitle}</Text>
       <View style={CalendarHeaderStyles.ItemContainer}>
-        {WeekData.map((value, index) => {
-          const {DateLabel, DayLabel} = value;
+        {weekData.map((value, index) => {
+          const {dayLabel, dateLabel} = value;
 
           return (
             <CalendarItem
               key={index.toString()}
-              dayLabel={DayLabel}
-              dateLabel={DateLabel}
-              isCurrent={DateLabel === CurrentDate}
+              dayLabel={dayLabel}
+              dateLabel={dateLabel}
+              isCurrent={dateLabel === currentDate}
             />
           );
         })}
@@ -42,9 +42,9 @@ function CalendarHeader({
 }
 
 CalendarHeader.defaultProps = {
-  MonthTitle: DEFAULT_MONTH,
-  WeekData: DEFAULT_WEEK,
-  CurrentDate: DEFAULT_DATE,
+  monthTitle: DEFAULT_MONTH,
+  weekData: DEFAULT_WEEK,
+  currentDate: DEFAULT_DATE,
 };
 
 export default CalendarHeader;

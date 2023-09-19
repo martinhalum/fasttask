@@ -11,13 +11,16 @@ import {StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 
 import StackNavigation from './src/navigation/stack';
+import DateProvider from 'providers/DateProvider';
 
 const Navigation = () => {
   return (
-    <NavigationContainer>
-      <StatusBar />
-      <StackNavigation />
-    </NavigationContainer>
+    <DateProvider>
+      <NavigationContainer>
+        <StatusBar />
+        <StackNavigation />
+      </NavigationContainer>
+    </DateProvider>
   );
 };
 

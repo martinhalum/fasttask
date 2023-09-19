@@ -5,12 +5,12 @@
  */
 
 export type WeekType = {
-  DayLabel: String;
-  DateLabel: String;
+  dayLabel: String;
+  dateLabel: String;
 };
 
 export type PropsType = {
-  MonthTitle: String;
-  WeekData: WeekType[];
-  CurrentDate: String;
+  monthTitle: String;
+  weekData: WeekType[];
+  currentDate: String;
 };
