@@ -26,8 +26,8 @@ function TitleSubtitle({
       <Text
         style={
           whiteFont
-            ? TitleSubtitleStyles.prioTitleStyle
-            : TitleSubtitleStyles.nonPrioTitleStyle
+            ? TitleSubtitleStyles.nonPrioTitleStyle
+            : TitleSubtitleStyles.prioTitleStyle
         }>
         {title}
       </Text>
@@ -35,7 +35,7 @@ function TitleSubtitle({
         <IconLabel
           subtitle={subtitle}
           showIcon={showIcon}
-          whiteFont={!whiteFont}
+          whiteFont={whiteFont}
         />
       )}
     </View>

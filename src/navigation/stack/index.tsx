@@ -4,6 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import HomePage from '@pages/HomePage';
 
 import {PropsType} from './types';
+import DetailPage from 'pages/DetailPage';
 
 const Stack = createStackNavigator();
 
@@ -14,6 +15,7 @@ const StackNavigation = ({}: PropsType) => (
       gestureEnabled: false,
     }}>
     <Stack.Screen name="HomePage" component={HomePage} />
+    <Stack.Screen name="DetailPage" component={DetailPage} />
   </Stack.Navigator>
 );
 

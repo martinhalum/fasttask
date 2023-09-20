@@ -13,10 +13,12 @@ import HomePageLayoutStyles from './styles';
 import type {PropsType} from './types';
 import {useDateContext} from '@providers/DateProvider/DateProvider';
 import CardGroup from 'components/organisms/CardGroup';
+// import {useAppContext} from 'providers/Appprovider/AppProvider';
 
 function HomePageLayout({}: PropsType): React.ReactElement {
   const {currentMonth, currentDate, currentWeek, initDone, initDate} =
     useDateContext();
+  // const {todoTasks} = useAppContext();
 
   useEffect(() => {
     if (!initDone) {
@@ -35,10 +37,9 @@ function HomePageLayout({}: PropsType): React.ReactElement {
         weekData={currentWeek}
       />
       <CardGroup />
+      {/* <CardGroup cardData={todoTasks} /> */}
     </ScrollView>
   );
 }
-
-HomePageLayout.defaultProps = {};
 
 export default HomePageLayout;

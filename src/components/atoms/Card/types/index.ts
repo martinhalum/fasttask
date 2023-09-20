@@ -7,6 +7,7 @@
 import {ReactNode} from 'react';
 
 export type PropsType = {
-  children: ReactNode;
+  onPress?: () => void;
   isPrio?: Boolean;
+  children: ReactNode;
 };

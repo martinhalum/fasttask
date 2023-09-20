@@ -12,15 +12,18 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import StackNavigation from './src/navigation/stack';
 import DateProvider from 'providers/DateProvider';
+import AppProvider from 'providers/Appprovider/AppProvider';
 
 const Navigation = () => {
   return (
-    <DateProvider>
-      <NavigationContainer>
-        <StatusBar />
-        <StackNavigation />
-      </NavigationContainer>
-    </DateProvider>
+    <AppProvider>
+      <DateProvider>
+        <NavigationContainer>
+          <StatusBar />
+          <StackNavigation />
+        </NavigationContainer>
+      </DateProvider>
+    </AppProvider>
   );
 };
 

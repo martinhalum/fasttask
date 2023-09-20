@@ -7,10 +7,11 @@
 import {StyleSheet} from 'react-native';
 import {MainTheme} from 'theme';
 
-const CalendarHeaderStyles = StyleSheet.create({
-  Container: {
-    backgroundColor: MainTheme.colors.background,
+const DetailPageStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: MainTheme.colors.primary,
   },
 });
 
-export default CalendarHeaderStyles;
+export default DetailPageStyles;

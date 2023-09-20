@@ -11,10 +11,11 @@ import CardStyles from './styles';
 
 import type {PropsType} from './types';
 
-function Card({children, isPrio}: PropsType): React.ReactElement {
+function Card({onPress, isPrio, children}: PropsType): React.ReactElement {
   return (
     <TouchableOpacity
-      style={isPrio ? CardStyles.prioContainer : CardStyles.nonPrioContainer}>
+      style={isPrio ? CardStyles.prioContainer : CardStyles.nonPrioContainer}
+      onPress={onPress}>
       {children}
     </TouchableOpacity>
   );

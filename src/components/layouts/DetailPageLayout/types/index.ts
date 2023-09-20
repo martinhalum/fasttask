@@ -1,11 +1,11 @@
 /**
  *
- * CardDetails Types
+ * DetailPageLayout Types
  *
  */
 
 import {TodoType} from '@organisms/CardGroup/types';
 
 export type PropsType = {
-  todoData: TodoType;
+  details: TodoType;
 };

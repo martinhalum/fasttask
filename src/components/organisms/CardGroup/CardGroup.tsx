@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import {View} from 'react-native';
+import {Text, View} from 'react-native';
 
 import CardDetails from '@molecules/CardDetails';
 
@@ -18,18 +18,17 @@ function CardGroup({cardData}: PropsType): React.ReactElement {
   return (
     <View>
       {cardData.map((value, index) => {
-        const {title, dateDue, prio} = value;
         return (
           <View key={index.toString()} style={CardGroupStyles.wrapper}>
-            <CardDetails
-              title={title}
-              subtitle={dateDue}
-              prio={prio}
-              isPrio={prio === 'High'}
-            />
+            <CardDetails todoData={value} />
           </View>
         );
       })}
+      {cardData.length === 0 && (
+        <View style={CardGroupStyles.emptyContainer}>
+          <Text style={CardGroupStyles.emptyLabel}>No Tasks Yet</Text>
+        </View>
+      )}
     </View>
   );
 }
