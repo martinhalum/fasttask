@@ -1,8 +1,0 @@
-/**
-*
-* DetailPageLayout Config
-*
-*/
-
-
-

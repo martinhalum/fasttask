@@ -4,20 +4,22 @@
  *
  */
 
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Modal, SafeAreaView} from 'react-native';
 
 import HomePageLayout from '@layouts/HomePageLayout';
+import TodoTaskModal from '@layouts/TodoTaskModal';
+import useAppStore from '@providers/AppProvider';
 
 import HomePageStyles from './styles';
 
-import type {PropsType} from './types';
-import TodoTaskModal from 'components/layouts/TodoTaskModal';
-import useAppStore from 'providers/AppProvider/AppProvider';
-
-function HomePage({}: PropsType): React.ReactElement {
-  const {addTasks} = useAppStore();
+function HomePage(): React.ReactElement {
+  const {addTasks, fetchStorage} = useAppStore();
   const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    fetchStorage();
+  });
 
   const saveTodoTaskHandler = data => {
     setShowModal(false);

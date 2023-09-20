@@ -9,6 +9,7 @@ import {Appearance, Text, View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import IconLabelStyles from './styles';
+
 import type {PropsType} from './types';
 
 function IconLabel(props: PropsType): React.ReactElement {

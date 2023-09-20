@@ -1,11 +1,21 @@
-import React, {useContext, useState} from 'react';
-import AppContext from 'contexts/AppContext';
-import {SubtaskType, TodoType} from '@organisms/CardGroup/types';
 import {create} from 'zustand';
+
+import {SubtaskType, TodoType} from '@organisms/CardGroup/types';
+
 import {AppContextType} from './types';
+import {getItem, setItem} from 'storage';
+import {DEFAULT_CARDS} from 'components/organisms/CardGroup/config';
 
 const useAppStore = create<AppContextType>()(set => ({
   todoTasks: [],
+  selectedItem: DEFAULT_CARDS[0],
+  setSelectedItem: selectedItem => set({selectedItem: selectedItem}),
+  fetchStorage: async () => {
+    const response = await getItem();
+    if (response) {
+      set({todoTasks: JSON.parse(response)});
+    }
+  },
   addTasks: (data?: TodoType) => {
     set(state => {
       const newTodoData = state.todoTasks;
@@ -15,6 +25,8 @@ const useAppStore = create<AppContextType>()(set => ({
           ...data,
         });
       }
+
+      setItem(JSON.stringify(newTodoData));
 
       return {todoTasks: newTodoData};
     });
@@ -41,6 +53,8 @@ const useAppStore = create<AppContextType>()(set => ({
         }
       });
 
+      setItem(JSON.stringify(state.todoTasks));
+
       return {todoTasks: state.todoTasks};
     });
   },
@@ -56,6 +70,8 @@ const useAppStore = create<AppContextType>()(set => ({
           }
         });
       }
+
+      setItem(JSON.stringify(newTasks));
       return {todoTasks: newTasks};
     });
   },
@@ -84,6 +100,8 @@ const useAppStore = create<AppContextType>()(set => ({
           state.todoTasks[index] = details;
         }
       });
+
+      setItem(JSON.stringify(state.todoTasks));
 
       return {todoTasks: state.todoTasks};
     });

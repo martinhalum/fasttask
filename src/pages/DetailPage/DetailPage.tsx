@@ -6,33 +6,33 @@
 
 import React, {useState} from 'react';
 import {Modal, SafeAreaView} from 'react-native';
-import {RouteProp, useRoute} from '@react-navigation/native';
 
 import DetailPageLayout from '@layouts/DetailPageLayout';
 import SubtaskModalLayout from '@layouts/SubtaskModalLayout';
-import {StackParamList} from '@navigation/stack/types';
+import useAppStore from '@providers/AppProvider';
 
 import DetailPageStyles from './styles';
-import useAppStore from 'providers/AppProvider/AppProvider';
 
 function DetailPage(): React.ReactElement {
   const [showModal, setShowModal] = useState(false);
-  const route = useRoute<RouteProp<StackParamList>>();
-  const {addSubTasks} = useAppStore();
-  const details = route.params?.data;
+  const {addSubTasks, selectedItem} = useAppStore();
 
   const showModalHandler = () => {
     setShowModal(true);
   };
 
   const saveSubtaskHandler = (data: any) => {
-    addSubTasks(details, data);
+    addSubTasks(selectedItem, data);
     setShowModal(false);
   };
 
   return (
     <SafeAreaView style={DetailPageStyles.container}>
-      <DetailPageLayout details={details} setShowModal={showModalHandler} />
+      <DetailPageLayout
+        details={selectedItem}
+        setShowModal={showModalHandler}
+      />
+
       <Modal animationType="slide" transparent={true} visible={showModal}>
         <SubtaskModalLayout
           leftButtonLabel="Cancel"

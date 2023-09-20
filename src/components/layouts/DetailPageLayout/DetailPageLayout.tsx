@@ -13,14 +13,12 @@ import NavButtons from '@atoms/NavButtons';
 import TitleSubtitle from '@atoms/TitleSubtitle';
 import ButtonGroup from '@molecules/ButtonGroup';
 
-import {DEFAULT_CARDS} from '@organisms/CardGroup/config';
-
+import useAppStore from '@providers/AppProvider';
 import {StackParamList} from '@navigation/stack/types';
 
 import DetailPageLayoutStyles from './styles';
 
 import type {PropsType} from './types';
-import useAppStore from 'providers/AppProvider/AppProvider';
 
 function DetailPageLayout({
   details,
@@ -79,9 +77,5 @@ function DetailPageLayout({
     </>
   );
 }
-
-DetailPageLayout.defaultProps = {
-  details: DEFAULT_CARDS[0],
-};
 
 export default DetailPageLayout;

@@ -8,6 +8,7 @@ import React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 
 import ButtonStyles from './styles';
+
 import type {PropsType} from './types';
 
 function OutlinedButton({

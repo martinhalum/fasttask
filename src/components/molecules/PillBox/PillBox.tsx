@@ -9,6 +9,7 @@ import {Text, View} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 import PillBoxStyles from './styles';
+
 import type {PropsType} from './types';
 
 function PillBox({
