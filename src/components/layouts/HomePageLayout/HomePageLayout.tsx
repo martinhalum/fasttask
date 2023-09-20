@@ -5,13 +5,14 @@
  */
 
 import React, {useEffect} from 'react';
-import {View} from 'react-native';
+import {ScrollView} from 'react-native';
 
 import CalendarHeader from '@organisms/CalendarHeader';
 
 import HomePageLayoutStyles from './styles';
 import type {PropsType} from './types';
 import {useDateContext} from '@providers/DateProvider/DateProvider';
+import CardGroup from 'components/organisms/CardGroup';
 
 function HomePageLayout({}: PropsType): React.ReactElement {
   const {currentMonth, currentDate, currentWeek, initDone, initDate} =
@@ -24,13 +25,17 @@ function HomePageLayout({}: PropsType): React.ReactElement {
   }, [initDone, initDate]);
 
   return (
-    <View style={HomePageLayoutStyles.container}>
+    <ScrollView
+      style={HomePageLayoutStyles.container}
+      contentInset={HomePageLayoutStyles.spacer}
+      showsVerticalScrollIndicator={false}>
       <CalendarHeader
         monthTitle={currentMonth}
         currentDate={currentDate}
         weekData={currentWeek}
       />
-    </View>
+      <CardGroup />
+    </ScrollView>
   );
 }
 

@@ -9,15 +9,13 @@ import {SafeAreaView} from 'react-native';
 
 import HomePageLayout from '@layouts/HomePageLayout';
 
-// import HomePageConfig from './config';
-
-// import HomePageStyles from './styles';
+import HomePageStyles from './styles';
 
 import type {PropsType} from './types';
 
 function HomePage({}: PropsType): React.ReactElement {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={HomePageStyles.Container}>
       <HomePageLayout />
     </SafeAreaView>
   );

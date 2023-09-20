@@ -1,8 +1,0 @@
-/**
-*
-* HomePage Config
-*
-*/
-
-
-
