@@ -42,6 +42,4 @@ function HomePage(): React.ReactElement {
   );
 }
 
-HomePage.defaultProps = {};
-
 export default HomePage;

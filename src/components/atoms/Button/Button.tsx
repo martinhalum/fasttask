@@ -82,6 +82,4 @@ function Button({
   }
 }
 
-Button.defaultProps = {};
-
 export default Button;

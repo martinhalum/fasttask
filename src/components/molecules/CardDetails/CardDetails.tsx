@@ -20,12 +20,21 @@ import {SUBTITLE, TITLE} from './config';
 
 import type {PropsType} from './types';
 
+/**
+ * Represents a card with details of a todo task.
+ * Displays the priority marker, title, subtitle, and an optional icon.
+ * Handles navigation to the detail page when the card is pressed.
+ */
 function CardDetails({todoData}: PropsType): React.ReactElement {
   const navigation = useNavigation<StackNavigationProp<StackParamList>>();
   const {setSelectedItem} = useAppStore();
   const {title, dateDue, prio} = todoData;
   const isDone = prio === 'Done';
 
+  /**
+   * Handles the onPress event of the card.
+   * Sets the selected item and navigates to the detail page.
+   */
   const onPressHandler = () => {
     setSelectedItem(todoData);
     navigation.navigate('DetailPage');
