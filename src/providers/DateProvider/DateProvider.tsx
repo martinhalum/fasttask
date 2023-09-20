@@ -1,18 +1,17 @@
-import React, {useContext, useState} from 'react';
+import {create} from 'zustand';
 import {format, getDate, startOfISOWeek} from 'date-fns';
 
-import DateContext from '@contexts/DateContext';
+import {DateTypes} from './types';
 import {WeekType} from '@organisms/CalendarHeader/types';
 
 import {DAY_NAME, DEFAULT_WEEK} from './config';
 
-const DateProvider = ({children}) => {
-  const [currentDate, setCurrentDate] = useState('');
-  const [currentMonth, setCurrentMonth] = useState('');
-  const [currentWeek, setCurrentWeek] = useState(DEFAULT_WEEK);
-  const [initDone, setInitDone] = useState(false);
-
-  const initDate = () => {
+const useDateStore = create<DateTypes>()(set => ({
+  currentDate: '',
+  currentMonth: '',
+  currentWeek: DEFAULT_WEEK,
+  initDone: false,
+  initDate: () => {
     const nowDate = new Date();
     const date = getDate(nowDate);
     const monthName = format(nowDate, 'MMMM');
@@ -26,28 +25,11 @@ const DateProvider = ({children}) => {
       });
     }
 
-    setCurrentDate(date.toString());
-    setCurrentMonth(monthName);
-    setCurrentWeek(weekData);
-    setInitDone(true);
-  };
+    set({currentDate: date.toString()});
+    set({currentMonth: monthName});
+    set({currentWeek: weekData});
+    set({initDone: true});
+  },
+}));
 
-  return (
-    <DateContext.Provider
-      value={{
-        currentDate,
-        currentMonth,
-        currentWeek,
-        initDone,
-        initDate,
-      }}>
-      {children}
-    </DateContext.Provider>
-  );
-};
-
-export const useDateContext = () => {
-  return useContext(DateContext);
-};
-
-export default DateProvider;
+export default useDateStore;

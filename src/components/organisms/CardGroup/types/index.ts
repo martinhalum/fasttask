@@ -5,11 +5,13 @@
  */
 
 export type SubtaskType = {
+  id: number;
   title: string;
   done: boolean;
 };
 
 export type TodoType = {
+  id: number;
   title: string;
   description: string;
   dateDue: string;

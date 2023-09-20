@@ -4,8 +4,9 @@
  *
  */
 
-import {SubtaskType} from 'components/organisms/CardGroup/types';
+import {SubtaskType, TodoType} from 'components/organisms/CardGroup/types';
 
 export type PropsType = {
+  task?: TodoType;
   data?: SubtaskType[];
 };

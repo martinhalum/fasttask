@@ -13,9 +13,12 @@ import OutlinedButton from './OutlinedButton';
 
 function Button({
   label,
+  leftAlign,
   leftIcon,
   rightIcon,
   type,
+  customColor,
+  textColor,
   disabled,
   onPress,
 }: PropsType): React.ReactElement {
@@ -24,10 +27,13 @@ function Button({
       return (
         <FilledButton
           label={label}
+          leftAlign={leftAlign}
           leftIcon={leftIcon}
           rightIcon={rightIcon}
           type={type}
           onPress={onPress}
+          customColor={customColor}
+          textColor={textColor}
           disabled={disabled}
         />
       );
@@ -35,10 +41,13 @@ function Button({
       return (
         <OutlinedButton
           label={label}
+          leftAlign={leftAlign}
           leftIcon={leftIcon}
           rightIcon={rightIcon}
           type={type}
           onPress={onPress}
+          customColor={customColor}
+          textColor={textColor}
           disabled={disabled}
         />
       );
@@ -46,10 +55,13 @@ function Button({
       return (
         <OutlinedButton
           label={label}
+          leftAlign={leftAlign}
           leftIcon={leftIcon}
           rightIcon={rightIcon}
           type={type}
           onPress={onPress}
+          customColor={customColor}
+          textColor={textColor}
           disabled={disabled}
         />
       );
@@ -57,10 +69,13 @@ function Button({
       return (
         <FilledButton
           label={label}
+          leftAlign={leftAlign}
           leftIcon={leftIcon}
           rightIcon={rightIcon}
           type={type}
           onPress={onPress}
+          customColor={customColor}
+          textColor={textColor}
           disabled={disabled}
         />
       );

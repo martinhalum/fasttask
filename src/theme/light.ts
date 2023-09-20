@@ -30,5 +30,9 @@ export const LightTheme = {
     buttonBorderText: Colors.black,
     submitBackground: Colors.green,
     submitLabel: Colors.black,
+    modalNav: Colors.blue,
+    icon: Colors.black,
+    addIcon: Colors.white,
+    addBg: Colors.black100,
   },
 };

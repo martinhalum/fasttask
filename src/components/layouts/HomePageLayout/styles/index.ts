@@ -9,11 +9,14 @@ import {StyleSheet} from 'react-native';
 import {MainTheme} from 'theme';
 
 const HomePageLayoutStyles = StyleSheet.create({
-  container: {
+  wrapper: {
     height: '100%',
+  },
+  container: {
     paddingHorizontal: 22,
-    marginBottom: 150,
+    paddingBottom: 150,
     backgroundColor: MainTheme.colors.background,
+    zIndex: 0,
   },
   spacer: {
     bottom: 100,

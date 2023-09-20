@@ -20,19 +20,19 @@ import type {PropsType} from './types';
 function CardDetails({todoData}: PropsType): React.ReactElement {
   const navigation = useNavigation<StackNavigationProp<StackParamList>>();
   const {title, dateDue, prio} = todoData;
-  const isPrio = prio === 'High';
+  const isDone = prio === 'Done';
 
   const onPressHandler = () => {
     navigation.navigate('DetailPage', {data: todoData});
   };
 
   return (
-    <Card isPrio={isPrio} onPress={onPressHandler}>
-      <PriorityMarker label={prio} isPrio={isPrio} />
+    <Card isPrio={!isDone} onPress={onPressHandler}>
+      <PriorityMarker label={prio} isPrio={!isDone} />
       <TitleSubtitle
         title={title}
         subtitle={dateDue}
-        whiteFont={!isPrio}
+        whiteFont={isDone}
         showIcon
       />
     </Card>

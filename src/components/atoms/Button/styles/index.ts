@@ -57,10 +57,11 @@ const ButtonStyles = StyleSheet.create({
     fontWeight: '600',
   },
   iconContainer: {
-    padding: 6,
-    borderRadius: 12,
-    height: 25,
-    width: 25,
+    borderRadius: 15,
+    height: 30,
+    width: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 

@@ -5,20 +5,22 @@
  */
 
 import React, {useEffect} from 'react';
-import {ScrollView} from 'react-native';
+import {ScrollView, View} from 'react-native';
 
 import CalendarHeader from '@organisms/CalendarHeader';
+import CardGroup from '@organisms/CardGroup';
+import Footer from '@organisms/Footer';
+
+import useDateStore from '@providers/DateProvider';
 
 import HomePageLayoutStyles from './styles';
 import type {PropsType} from './types';
-import {useDateContext} from '@providers/DateProvider/DateProvider';
-import CardGroup from 'components/organisms/CardGroup';
-// import {useAppContext} from 'providers/Appprovider/AppProvider';
+import useAppStore from 'providers/AppProvider/AppProvider';
 
-function HomePageLayout({}: PropsType): React.ReactElement {
+function HomePageLayout({onPressAdd}: PropsType): React.ReactElement {
   const {currentMonth, currentDate, currentWeek, initDone, initDate} =
-    useDateContext();
-  // const {todoTasks} = useAppContext();
+    useDateStore();
+  const {todoTasks} = useAppStore();
 
   useEffect(() => {
     if (!initDone) {
@@ -27,18 +29,21 @@ function HomePageLayout({}: PropsType): React.ReactElement {
   }, [initDone, initDate]);
 
   return (
-    <ScrollView
-      style={HomePageLayoutStyles.container}
-      contentInset={HomePageLayoutStyles.spacer}
-      showsVerticalScrollIndicator={false}>
-      <CalendarHeader
-        monthTitle={currentMonth}
-        currentDate={currentDate}
-        weekData={currentWeek}
-      />
-      <CardGroup />
-      {/* <CardGroup cardData={todoTasks} /> */}
-    </ScrollView>
+    <View style={HomePageLayoutStyles.wrapper}>
+      <ScrollView
+        style={HomePageLayoutStyles.container}
+        contentInset={HomePageLayoutStyles.spacer}
+        showsVerticalScrollIndicator={false}>
+        <CalendarHeader
+          monthTitle={currentMonth}
+          currentDate={currentDate}
+          weekData={currentWeek}
+        />
+        {/* <CardGroup /> */}
+        <CardGroup cardData={todoTasks} />
+      </ScrollView>
+      <Footer onPressAdd={onPressAdd} />
+    </View>
   );
 }
 

@@ -1,10 +1,9 @@
 /**
-*
-* HomePageLayout Types
-*
-*/
-
+ *
+ * HomePageLayout Types
+ *
+ */
 
 export type PropsType = {
-
+  onPressAdd: () => void;
 };

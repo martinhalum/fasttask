@@ -20,10 +20,19 @@ import {StackParamList} from '@navigation/stack/types';
 import DetailPageLayoutStyles from './styles';
 
 import type {PropsType} from './types';
+import useAppStore from 'providers/AppProvider/AppProvider';
 
-function DetailPageLayout({details}: PropsType): React.ReactElement {
+function DetailPageLayout({
+  details,
+  setShowModal,
+}: PropsType): React.ReactElement {
   const navigation = useNavigation<NavigationProp<StackParamList>>();
+  const {updateTasks} = useAppStore();
 
+  const onPressDone = () => {
+    updateTasks(details);
+    navigation.goBack();
+  };
   return (
     <>
       <View style={DetailPageLayoutStyles.headerContainer}>
@@ -50,10 +59,20 @@ function DetailPageLayout({details}: PropsType): React.ReactElement {
           </View>
           <View>
             <Text style={DetailPageLayoutStyles.subtaskLabel}>Subtasks</Text>
-            <ButtonGroup data={details.subtask} />
+            <ButtonGroup task={details} data={details.subtask} />
+            <Button
+              label="Add a subtask"
+              type="outlined"
+              onPress={setShowModal}
+              disabled={
+                details.subtask?.length === 3 || details.prio === 'Done'
+              }
+            />
           </View>
           <View style={DetailPageLayoutStyles.submitContainer}>
-            <Button label="Done" type="submit" />
+            {details.prio !== 'Done' && (
+              <Button label="Done" type="submit" onPress={onPressDone} />
+            )}
           </View>
         </ScrollView>
       </View>
