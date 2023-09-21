@@ -35,12 +35,13 @@ import type {PropsType} from './types';
  * />
  */
 function CalendarHeader({
+  testId,
   monthTitle,
   weekData,
   currentDate,
 }: PropsType): React.ReactElement {
   return (
-    <View style={CalendarHeaderStyles.Container}>
+    <View testID={testId} style={CalendarHeaderStyles.Container}>
       <Text style={CalendarHeaderStyles.HeadingLabel}>{monthTitle}</Text>
       <View style={CalendarHeaderStyles.ItemContainer}>
         {weekData.map((value, index) => {

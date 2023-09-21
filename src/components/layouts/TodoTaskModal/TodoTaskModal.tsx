@@ -78,6 +78,7 @@ function TodoTaskModal({
           </TouchableOpacity>
           <Text style={SubtaskModalLayoutStyles.headerLabel}>{label}</Text>
           <TouchableOpacity
+            testID="Done"
             onPress={handleRightButton}
             disabled={taskTitle === ''}>
             <Text style={SubtaskModalLayoutStyles.navButton}>
@@ -89,6 +90,7 @@ function TodoTaskModal({
           <View>
             <Text style={SubtaskModalLayoutStyles.inputLabel}>Title</Text>
             <TextInput
+              testID="TitleInput"
               style={SubtaskModalLayoutStyles.inputStyle}
               onChangeText={text => setTaskTitle(text)}
               placeholder="Enter Task Title"
@@ -98,6 +100,7 @@ function TodoTaskModal({
           <View>
             <Text style={SubtaskModalLayoutStyles.inputLabel}>Description</Text>
             <TextInput
+              testID="descriptionInput"
               style={SubtaskModalLayoutStyles.descriptionStyle}
               onChangeText={text => setDescription(text)}
               placeholder="Enter Task Title"

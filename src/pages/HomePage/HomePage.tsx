@@ -47,7 +47,11 @@ function HomePage(): React.ReactElement {
   return (
     <SafeAreaView style={HomePageStyles.Container}>
       <HomePageLayout onPressAdd={() => setShowModal(true)} />
-      <Modal animationType="slide" transparent={true} visible={showModal}>
+      <Modal
+        testID="modal"
+        animationType="slide"
+        transparent={true}
+        visible={showModal}>
         <TodoTaskModal
           leftButtonLabel="Cancel"
           leftButtonHandler={() => setShowModal(false)}

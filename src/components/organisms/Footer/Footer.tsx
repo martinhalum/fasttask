@@ -29,7 +29,10 @@ function Footer({onPressAdd}: PropsType): React.ReactElement {
     <View style={FooterStyles.container}>
       <IconFa5 name="home" size={24} style={FooterStyles.icon} />
       <Icon name="folder-o" size={26} style={FooterStyles.icon} />
-      <TouchableOpacity style={FooterStyles.addContainer} onPress={onPressAdd}>
+      <TouchableOpacity
+        testID="Add"
+        style={FooterStyles.addContainer}
+        onPress={onPressAdd}>
         <IconFa5 name="plus" size={20} style={FooterStyles.addIcon} />
       </TouchableOpacity>
       <Icon name="comment-o" size={26} style={FooterStyles.icon} />
