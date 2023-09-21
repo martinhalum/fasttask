@@ -2,6 +2,17 @@
 
 This is a simple app to manage, and track your daily tasks created using React-Native.
 
+# Target Audience
+
+This app is designed to the busy body that wants to track their daily tasks and to-do list in an easier and friendly to use application
+
+# Features
+
+- Task Creation
+- Task Management
+- Adding Subtask
+- Subtask Management
+
 # Getting Started
 
 > **Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
