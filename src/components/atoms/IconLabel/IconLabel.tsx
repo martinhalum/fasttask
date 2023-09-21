@@ -9,7 +9,6 @@ import {Appearance, Text, View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import IconLabelStyles from './styles';
-
 import type {PropsType} from './types';
 
 function IconLabel(props: PropsType): React.ReactElement {
@@ -22,7 +21,7 @@ function IconLabel(props: PropsType): React.ReactElement {
         <Icon
           name="calendar"
           size={12}
-          color={whiteFont && isDark ? 'white' : 'black'}
+          color={whiteFont && isDark ? 'white' : undefined}
         />
       )}
       <Text

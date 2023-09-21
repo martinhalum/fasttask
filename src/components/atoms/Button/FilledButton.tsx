@@ -24,7 +24,7 @@ function FilledButton({
   onPress,
 }: PropsType): React.ReactElement {
   const backgroundColor =
-    leftIcon !== undefined ? MainTheme.colors.secondary : 'transparent';
+    leftIcon !== undefined ? MainTheme.colors.primary : 'transparent';
 
   const containerStyle =
     type === 'primary'
@@ -32,6 +32,7 @@ function FilledButton({
       : ButtonStyles.secondaryContainer;
   return (
     <TouchableOpacity
+      testID="button"
       style={
         customColor === undefined
           ? containerStyle
@@ -45,10 +46,12 @@ function FilledButton({
             ButtonStyles.iconContainer,
             {backgroundColor: backgroundColor},
           ]}>
-          {leftIcon && <Icon name={leftIcon} />}
+          {leftIcon && <Icon name={leftIcon} style={{color: 'white'}} />}
         </View>
       )}
-      <Text style={{color: textColor}}>{label}</Text>
+      <Text testID="label" style={{color: textColor}}>
+        {label}
+      </Text>
       <View style={ButtonStyles.iconContainer}>
         {rightIcon && (
           <Icon name={rightIcon} size={15} style={{color: textColor}} />
@@ -57,7 +60,5 @@ function FilledButton({
     </TouchableOpacity>
   );
 }
-
-FilledButton.defaultProps = {};
 
 export default FilledButton;

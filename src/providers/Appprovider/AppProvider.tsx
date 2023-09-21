@@ -11,9 +11,14 @@ const useAppStore = create<AppContextType>()(set => ({
   selectedItem: DEFAULT_CARDS[0],
   setSelectedItem: selectedItem => set({selectedItem: selectedItem}),
   fetchStorage: async () => {
-    const response = await getItem();
-    if (response) {
-      set({todoTasks: JSON.parse(response)});
+    try {
+      const response = await getItem();
+
+      if (response) {
+        set({todoTasks: JSON.parse(response)});
+      }
+    } catch (error) {
+      console.error(error);
     }
   },
   addTasks: (data?: TodoType) => {

@@ -31,7 +31,7 @@ function TitleSubtitle({
         }>
         {title}
       </Text>
-      {subtitle && (
+      {subtitle !== undefined && (
         <IconLabel
           subtitle={subtitle}
           showIcon={showIcon}

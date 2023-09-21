@@ -23,34 +23,7 @@ function Button({
   onPress,
 }: PropsType): React.ReactElement {
   switch (type) {
-    case 'primary':
-      return (
-        <FilledButton
-          label={label}
-          leftAlign={leftAlign}
-          leftIcon={leftIcon}
-          rightIcon={rightIcon}
-          type={type}
-          onPress={onPress}
-          customColor={customColor}
-          textColor={textColor}
-          disabled={disabled}
-        />
-      );
     case 'outlined':
-      return (
-        <OutlinedButton
-          label={label}
-          leftAlign={leftAlign}
-          leftIcon={leftIcon}
-          rightIcon={rightIcon}
-          type={type}
-          onPress={onPress}
-          customColor={customColor}
-          textColor={textColor}
-          disabled={disabled}
-        />
-      );
     case 'submit':
       return (
         <OutlinedButton

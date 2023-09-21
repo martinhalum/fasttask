@@ -28,6 +28,4 @@ function NavButtons({
   );
 }
 
-NavButtons.defaultProps = {};
-
 export default NavButtons;

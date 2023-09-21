@@ -8,6 +8,6 @@ import {ReactNode} from 'react';
 
 export type PropsType = {
   onPress?: () => void;
-  isPrio?: Boolean;
+  isPrio?: boolean;
   children: ReactNode;
 };

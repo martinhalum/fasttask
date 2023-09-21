@@ -34,6 +34,7 @@ const PriorityMarkerStyles = StyleSheet.create({
   label: {
     fontSize: 10,
     fontWeight: '700',
+    color: MainTheme.colors.submitLabel,
   },
   nonPrioLabel: {
     fontSize: 10,

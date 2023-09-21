@@ -7,5 +7,5 @@
 export type PropsType = {
   dayLabel: String;
   dateLabel: String;
-  isCurrent?: Boolean;
+  isCurrent?: boolean;
 };

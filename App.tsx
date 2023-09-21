@@ -21,7 +21,7 @@ const Navigation = () => {
   );
 };
 
-function App(): JSX.Element {
+function App() {
   return <Navigation />;
 }
 

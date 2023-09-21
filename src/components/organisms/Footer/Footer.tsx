@@ -28,6 +28,4 @@ function Footer({onPressAdd}: PropsType): React.ReactElement {
   );
 }
 
-Footer.defaultProps = {};
-
 export default Footer;

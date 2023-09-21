@@ -16,6 +16,7 @@ const FooterStyles = StyleSheet.create({
     bottom: 0,
     shadowColor: 'black',
     shadowOpacity: 0.3,
+    elevation: 15,
     zIndex: 4,
     flexDirection: 'row',
     alignItems: 'center',

@@ -38,6 +38,4 @@ function OutlinedButton({
   );
 }
 
-OutlinedButton.defaultProps = {};
-
 export default OutlinedButton;

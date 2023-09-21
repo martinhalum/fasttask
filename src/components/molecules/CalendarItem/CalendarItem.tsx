@@ -43,6 +43,4 @@ function CalendarItem({
   );
 }
 
-CalendarItem.defaultProps = {};
-
 export default CalendarItem;

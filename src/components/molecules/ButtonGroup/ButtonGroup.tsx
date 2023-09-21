@@ -22,7 +22,7 @@ function ButtonGroup({task, data}: PropsType): React.ReactElement {
   };
   return (
     <>
-      {data &&
+      {data !== undefined &&
         data.map((value, index) => {
           const {title, done} = value;
           return (
@@ -32,7 +32,8 @@ function ButtonGroup({task, data}: PropsType): React.ReactElement {
               <Button
                 label={title}
                 leftIcon={done ? 'check' : undefined}
-                type={done ? 'primary' : 'secondary'}
+                type={done ? 'secondary' : 'primary'}
+                textColor={done ? 'black' : 'white'}
                 onPress={() => handleDone(value)}
                 disabled={done}
               />
@@ -42,7 +43,5 @@ function ButtonGroup({task, data}: PropsType): React.ReactElement {
     </>
   );
 }
-
-ButtonGroup.defaultProps = {};
 
 export default ButtonGroup;

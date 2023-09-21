@@ -7,14 +7,15 @@
 import React, {useState} from 'react';
 import {
   KeyboardAvoidingView,
-  Platform,
   Text,
   TouchableOpacity,
   View,
   TextInput,
+  TouchableWithoutFeedback,
+  Keyboard,
 } from 'react-native';
 
-import SubtaskModalLayoutStyles from './styles';
+import SubtaskModalLayoutStyles from '@layouts/TodoTaskModal/styles';
 import type {PropsType} from './types';
 
 function SubtaskModalLayout({
@@ -31,37 +32,37 @@ function SubtaskModalLayout({
     setSubTaskTitle('');
   };
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={SubtaskModalLayoutStyles.container}>
-      <View style={SubtaskModalLayoutStyles.headerWrapper}>
-        <TouchableOpacity onPress={leftButtonHandler}>
-          <Text style={SubtaskModalLayoutStyles.navButton}>
-            {leftButtonLabel}
-          </Text>
-        </TouchableOpacity>
-        <Text style={SubtaskModalLayoutStyles.headerLabel}>{label}</Text>
-        <TouchableOpacity
-          onPress={handleRightButton}
-          disabled={subtaskTitle === ''}>
-          <Text style={SubtaskModalLayoutStyles.navButton}>
-            {rightButtonLabel}
-          </Text>
-        </TouchableOpacity>
-      </View>
-      <View style={SubtaskModalLayoutStyles.bodyContainer}>
-        <Text style={SubtaskModalLayoutStyles.inputLabel}>Title</Text>
-        <TextInput
-          style={SubtaskModalLayoutStyles.inputStyle}
-          onChangeText={text => setSubTaskTitle(text)}
-          placeholder="Subtask Title"
-          value={subtaskTitle}
-        />
-      </View>
-    </KeyboardAvoidingView>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <KeyboardAvoidingView
+        behavior={'padding'}
+        style={SubtaskModalLayoutStyles.subtaskContainer}>
+        <View style={SubtaskModalLayoutStyles.headerWrapper}>
+          <TouchableOpacity onPress={leftButtonHandler}>
+            <Text style={SubtaskModalLayoutStyles.navButton}>
+              {leftButtonLabel}
+            </Text>
+          </TouchableOpacity>
+          <Text style={SubtaskModalLayoutStyles.headerLabel}>{label}</Text>
+          <TouchableOpacity
+            onPress={handleRightButton}
+            disabled={subtaskTitle === ''}>
+            <Text style={SubtaskModalLayoutStyles.navButton}>
+              {rightButtonLabel}
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={SubtaskModalLayoutStyles.subtaskBodyContainer}>
+          <Text style={SubtaskModalLayoutStyles.inputLabel}>Title</Text>
+          <TextInput
+            style={SubtaskModalLayoutStyles.inputStyle}
+            onChangeText={text => setSubTaskTitle(text)}
+            placeholder="Subtask Title"
+            value={subtaskTitle}
+          />
+        </View>
+      </KeyboardAvoidingView>
+    </TouchableWithoutFeedback>
   );
 }
-
-SubtaskModalLayout.defaultProps = {};
 
 export default SubtaskModalLayout;
