@@ -11,6 +11,16 @@ import PillBoxStyles from './styles';
 
 import type {PropsType} from './types';
 
+/**
+ * Renders a pill box UI element.
+ *
+ * @param {Object} props - The component props.
+ * @param {PillBoxType} props.selectedItem - The currently selected item.
+ * @param {PillBoxType[]} props.data - An array of `PillBoxType` objects representing the data to be rendered in the pill box.
+ * @param {(data: PillBoxType) => void} props.setSelectedItem - A function to set the selected item.
+ *
+ * @returns A React-Native element representing the PillBox component.
+ */
 function PillBox({
   selectedItem,
   data,

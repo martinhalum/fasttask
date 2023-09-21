@@ -24,6 +24,11 @@ import type {PropsType} from './types';
  * Represents a card with details of a todo task.
  * Displays the priority marker, title, subtitle, and an optional icon.
  * Handles navigation to the detail page when the card is pressed.
+ *
+ * @param {Object} props - The component props.
+ * @param {todoData} props.todoData - An object that contains the to-do list to be displayed.
+ *
+ * @returns A React-Native element that represents the rendered `CardDetails` component
  */
 function CardDetails({todoData}: PropsType): React.ReactElement {
   const navigation = useNavigation<StackNavigationProp<StackParamList>>();

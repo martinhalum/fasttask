@@ -42,7 +42,6 @@ exports[`Button should render a FilledButton with undefined customColor and text
       "width": "100%",
     }
   }
-  testID="button"
 >
   <View
     style={
@@ -61,12 +60,12 @@ exports[`Button should render a FilledButton with undefined customColor and text
     }
   />
   <Text
+    role="heading"
     style={
       {
         "color": undefined,
       }
     }
-    testID="label"
   >
     Test
   </Text>
@@ -126,7 +125,6 @@ exports[`Button should render a FilledButton with undefined leftIcon and rightIc
       "width": "100%",
     }
   }
-  testID="button"
 >
   <View
     style={
@@ -145,12 +143,12 @@ exports[`Button should render a FilledButton with undefined leftIcon and rightIc
     }
   />
   <Text
+    role="heading"
     style={
       {
         "color": undefined,
       }
     }
-    testID="label"
   >
     Test
   </Text>
@@ -210,7 +208,6 @@ exports[`Button should render a FilledButton with undefined type 1`] = `
       "width": "100%",
     }
   }
-  testID="button"
 >
   <View
     style={
@@ -229,12 +226,12 @@ exports[`Button should render a FilledButton with undefined type 1`] = `
     }
   />
   <Text
+    role="heading"
     style={
       {
         "color": undefined,
       }
     }
-    testID="label"
   >
     Test
   </Text>
@@ -294,7 +291,6 @@ exports[`Button should render a primary FilledButton with label and onPress func
       "width": "100%",
     }
   }
-  testID="button"
 >
   <View
     style={
@@ -313,12 +309,12 @@ exports[`Button should render a primary FilledButton with label and onPress func
     }
   />
   <Text
+    role="heading"
     style={
       {
         "color": undefined,
       }
     }
-    testID="label"
   >
     Test
   </Text>

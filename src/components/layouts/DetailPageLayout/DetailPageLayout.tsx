@@ -20,6 +20,16 @@ import DetailPageLayoutStyles from './styles';
 
 import type {PropsType} from './types';
 
+/**
+ * Renders a detail page layout for a specific task.
+ * Displays the task's title, subtitle, description, subtasks, and a "Done" button.
+ * Provides functionality to update the task's status and navigate back to the previous page.
+ *
+ * @param details - An object containing the details of the task, including title, dateDue, description, subtask, and prio.
+ * @param setShowModal - A function to show a modal for adding a subtask.
+ *
+ * @returns A React-Native element representing the detail page layout for a specific task.
+ */
 function DetailPageLayout({
   details,
   setShowModal,
@@ -27,10 +37,14 @@ function DetailPageLayout({
   const navigation = useNavigation<NavigationProp<StackParamList>>();
   const {updateTasks} = useAppStore();
 
+  /**
+   * Updates the task's status and navigates back to the previous page.
+   */
   const onPressDone = () => {
     updateTasks(details);
     navigation.goBack();
   };
+
   return (
     <>
       <View style={DetailPageLayoutStyles.headerContainer}>

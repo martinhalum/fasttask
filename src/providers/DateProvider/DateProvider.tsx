@@ -1,3 +1,9 @@
+/**
+ * Zustand store hook for managing the calendar state.
+ *
+ * @returns The Zustand store object.
+ *
+ */
 import {create} from 'zustand';
 import {format, getDate, startOfISOWeek} from 'date-fns';
 

@@ -18,6 +18,20 @@ import {
 import SubtaskModalLayoutStyles from '@layouts/TodoTaskModal/styles';
 import type {PropsType} from './types';
 
+/**
+ * Renders a modal layout for a subtask.
+ *
+ * @component
+ *
+ * @param {Object} props - The input props.
+ * @param {string} props.leftButtonLabel - The label for the left navigation button.
+ * @param {function} props.leftButtonHandler - The event handler for the left navigation button click.
+ * @param {string} props.label - The label for the header.
+ * @param {string} props.rightButtonLabel - The label for the right navigation button.
+ * @param {function} props.rightButtonHandler - The event handler for the right navigation button click.
+ *
+ * @returns A React-Native element that represents the rendered modal layout for a subtask.
+ */
 function SubtaskModalLayout({
   leftButtonLabel,
   leftButtonHandler,

@@ -15,6 +15,25 @@ import CalendarHeaderStyles from './styles';
 
 import type {PropsType} from './types';
 
+/**
+ * Renders a header for a calendar with the month title and a row of calendar items representing each day of the week.
+ *
+ * @component
+ * @example
+ * <CalendarHeader
+ *   monthTitle="September"
+ *   weekData={[
+ *     { dayLabel: 'Sun', dateLabel: '17' },
+ *     { dayLabel: 'Mon', dateLabel: '18' },
+ *     { dayLabel: 'Tue', dateLabel: '19' },
+ *     { dayLabel: 'Wed', dateLabel: '20' },
+ *     { dayLabel: 'Thu', dateLabel: '21' },
+ *     { dayLabel: 'Fri', dateLabel: '22' },
+ *     { dayLabel: 'Sun', dateLabel: '23' },
+ *   ]}
+ *   currentDate="19"
+ * />
+ */
 function CalendarHeader({
   monthTitle,
   weekData,
@@ -41,6 +60,9 @@ function CalendarHeader({
   );
 }
 
+/**
+ * The title of the month to be displayed in the header. Defaults to 'September'.
+ */
 CalendarHeader.defaultProps = {
   monthTitle: DEFAULT_MONTH,
   weekData: DEFAULT_WEEK,

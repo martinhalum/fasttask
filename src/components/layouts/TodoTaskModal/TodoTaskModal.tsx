@@ -25,6 +25,18 @@ import {DEFAULT_PRIORITY, PILLBOX_SELECTION} from './config';
 import DatePicker from 'react-native-date-picker';
 import {format} from 'date-fns';
 
+/**
+ * Renders a modal for creating a new task.
+ *
+ * @param {Object} props - The component props.
+ * @param {string} props.leftButtonLabel - The label for the left button in the header.
+ * @param {function} props.leftButtonHandler - The event handler for the left button click.
+ * @param {string} props.label - The label for the header.
+ * @param {string} props.rightButtonLabel - The label for the right button in the header.
+ * @param {function} props.rightButtonHandler - The event handler for the right button click.
+ *
+ * @returns A React-Native element that represents the rendered modal layout for a subtask.
+ */
 function TodoTaskModal({
   leftButtonLabel,
   leftButtonHandler,

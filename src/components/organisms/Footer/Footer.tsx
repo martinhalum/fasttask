@@ -14,6 +14,16 @@ import FooterStyles from './styles';
 
 import type {PropsType} from './types';
 
+/**
+ * Renders a footer view with icons.
+ *
+ * @component
+ *
+ * @param {Object} props - The component props.
+ * @param {Function} props.onPressAdd - A function to be called when the add button is pressed.
+ *
+ * @returns A React-Native element representing the footer view with icons.
+ */
 function Footer({onPressAdd}: PropsType): React.ReactElement {
   return (
     <View style={FooterStyles.container}>

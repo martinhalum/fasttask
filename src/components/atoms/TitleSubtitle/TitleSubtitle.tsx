@@ -9,12 +9,21 @@ import {Text, View} from 'react-native';
 
 import IconLabel from '@atoms/IconLabel';
 
-import {TITLE} from './config';
-
 import TitleSubtitleStyles from './styles';
 
 import type {PropsType} from './types';
 
+/**
+ * Renders a title and an optional subtitle.
+ * Applies different styles based on the `whiteFont` prop.
+ * Conditionally renders the `IconLabel` component based on the presence of a subtitle.
+ *
+ * @param title - The string to be displayed on the title.
+ * @param subtitle - The string to be displayed on the subtitle.
+ * @param whiteFont -Determines the text color of the Texts.
+ * @param showIcon - Determines wether to show or hide the subtitleIcon
+ * @returns A React element representing the priority marker component.
+ */
 function TitleSubtitle({
   title,
   subtitle,
@@ -41,9 +50,5 @@ function TitleSubtitle({
     </View>
   );
 }
-
-TitleSubtitle.defaultProps = {
-  title: TITLE,
-};
 
 export default TitleSubtitle;

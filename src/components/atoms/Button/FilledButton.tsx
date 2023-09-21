@@ -12,6 +12,21 @@ import ButtonStyles from './styles';
 import type {PropsType} from './types';
 import {MainTheme} from 'theme';
 
+/**
+ * Renders a button with customizable styles and functionality.
+ *
+ * @param label - The text to be displayed on the button.
+ * @param leftAlign - Determines if the button's icon should be aligned to the left. Defaults to `false`.
+ * @param leftIcon - The name of the icon to be displayed on the left side of the button.
+ * @param rightIcon - The name of the icon to be displayed on the right side of the button.
+ * @param type - Determines the style of the button. Defaults to 'primary'.
+ * @param customColor - Overrides the default background color of the button.
+ * @param textColor - Overrides the default text color of the button.
+ * @param disabled - Determines if the button is disabled. Defaults to `false`.
+ * @param onPress - The function to be called when the button is pressed.
+ *
+ * @returns The rendered button component.
+ */
 function FilledButton({
   label,
   leftAlign,
@@ -32,7 +47,7 @@ function FilledButton({
       : ButtonStyles.secondaryContainer;
   return (
     <TouchableOpacity
-      testID="button"
+      role="button"
       style={
         customColor === undefined
           ? containerStyle
@@ -49,7 +64,7 @@ function FilledButton({
           {leftIcon && <Icon name={leftIcon} style={{color: 'white'}} />}
         </View>
       )}
-      <Text testID="label" style={{color: textColor}}>
+      <Text role="heading" style={{color: textColor}}>
         {label}
       </Text>
       <View style={ButtonStyles.iconContainer}>

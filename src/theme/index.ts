@@ -1,3 +1,7 @@
+/*
+ * Defines the MainTheme constant based on the device's appearance.
+ */
+
 import {Appearance} from 'react-native';
 
 import {LightTheme} from './light';

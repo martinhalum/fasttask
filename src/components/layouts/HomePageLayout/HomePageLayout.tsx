@@ -12,11 +12,17 @@ import CardGroup from '@organisms/CardGroup';
 import Footer from '@organisms/Footer';
 
 import useDateStore from '@providers/DateProvider';
+import useAppStore from '@providers/AppProvider';
 
 import HomePageLayoutStyles from './styles';
 import type {PropsType} from './types';
-import useAppStore from 'providers/AppProvider/AppProvider';
 
+/**
+ * Renders the layout for the home page of an application.
+ *
+ * @param onPressAdd - Function that handles the action when the add button in the footer is pressed.
+ * @returns A React-Native element representing the layout of the home page.
+ */
 function HomePageLayout({onPressAdd}: PropsType): React.ReactElement {
   const {currentMonth, currentDate, currentWeek, initDone, initDate} =
     useDateStore();
@@ -39,7 +45,6 @@ function HomePageLayout({onPressAdd}: PropsType): React.ReactElement {
           currentDate={currentDate}
           weekData={currentWeek}
         />
-        {/* <CardGroup /> */}
         <CardGroup cardData={todoTasks} />
       </ScrollView>
       <Footer onPressAdd={onPressAdd} />

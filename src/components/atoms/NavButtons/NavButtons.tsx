@@ -12,6 +12,16 @@ import NavButtonsStyles from './styles';
 
 import type {PropsType} from './types';
 
+/**
+ * Renders a component with two buttons wrapped in a View.
+ * The buttons are styled using the NavButtonsStyles stylesheet.
+ * Optional callback functions can be provided for the left and right buttons.
+ *
+ * @param {Object} props - The component props.
+ * @param {Function} props.onLeftPress - Callback function to be executed when the left button is pressed.
+ * @param {Function} props.onRightPress - Callback function to be executed when the right button is pressed.
+ * @returns {React.ReactElement} The rendered component.
+ */
 function NavButtons({
   onLeftPress,
   onRightPress,

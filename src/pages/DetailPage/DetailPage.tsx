@@ -13,14 +13,27 @@ import useAppStore from '@providers/AppProvider';
 
 import DetailPageStyles from './styles';
 
+/**
+ * Renders a detail page layout for a task, including a header, body, and a modal for adding subtasks.
+ *
+ * @returns The rendered detail page layout.
+ */
 function DetailPage(): React.ReactElement {
   const [showModal, setShowModal] = useState(false);
   const {addSubTasks, selectedItem} = useAppStore();
 
+  /**
+   * Sets the showModal state variable to true, showing the modal for adding subtasks.
+   */
   const showModalHandler = () => {
     setShowModal(true);
   };
 
+  /**
+   * Calls the addSubTasks function with the selectedItem and provided subtask data, and sets the showModal state variable to false.
+   *
+   * @param data - The data of the subtask to be saved.
+   */
   const saveSubtaskHandler = (data: any) => {
     addSubTasks(selectedItem, data);
     setShowModal(false);

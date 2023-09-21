@@ -1,14 +1,26 @@
+/**
+ * Zustand store hook for managing application state.
+ *
+ * @returns The Zustand store object.
+ *
+ */
 import {create} from 'zustand';
 
 import {SubtaskType, TodoType} from '@organisms/CardGroup/types';
 
 import {AppContextType} from './types';
 import {getItem, setItem} from 'storage';
-import {DEFAULT_CARDS} from 'components/organisms/CardGroup/config';
 
 const useAppStore = create<AppContextType>()(set => ({
   todoTasks: [],
-  selectedItem: DEFAULT_CARDS[0],
+  selectedItem: {
+    id: 0,
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+    description:
+      'Nam rutrum, dui non ornare convallis, purus tortor condimentum justo, non varius augue est ac ante. Ut euismod tempus ornare. Phasellus interdum, velit in sagittis sollicitudin, erat dui tempus ex, at congue ligula dui a enim. Pellentesque urna nisl, vulputate sed condimentum vel, auctor eget ante. Fusce eleifend odio euismod fringilla rhoncus.',
+    dateDue: 'September 21',
+    prio: 'High',
+  },
   setSelectedItem: selectedItem => set({selectedItem: selectedItem}),
   fetchStorage: async () => {
     try {

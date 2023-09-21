@@ -4,6 +4,7 @@
  *
  */
 
+import '@testing-library/jest-dom';
 import React from 'react';
 import {render, fireEvent} from '@testing-library/react-native';
 
@@ -65,9 +66,9 @@ describe('FilledButton', () => {
 
     const screen = render(<FilledButton label={label} onPress={onPress} />);
 
-    expect(screen.getByTestId('label')).toBeInTheDocument();
-    expect(screen.getByTestId('button')).toHaveAttribute('disabled', null);
-    fireEvent(screen.getByTestId('button'));
+    expect(screen.getByRole('heading')).toBeInTheDocument();
+    expect(screen.getByRole('button')).toHaveAttribute('disabled', null);
+    fireEvent(screen.getByRole('button'), 'submit');
     expect(onPress).toHaveBeenCalled();
   });
 });
