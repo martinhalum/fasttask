@@ -22,7 +22,7 @@ import type {PropsType} from './types';
  */
 function CardGroup({cardData}: PropsType): React.ReactElement {
   return (
-    <View>
+    <View testID="card-group">
       {cardData.map((value, index) => {
         return (
           <View key={index.toString()} style={CardGroupStyles.wrapper}>

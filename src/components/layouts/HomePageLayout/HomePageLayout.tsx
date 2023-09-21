@@ -23,7 +23,10 @@ import type {PropsType} from './types';
  * @param onPressAdd - Function that handles the action when the add button in the footer is pressed.
  * @returns A React-Native element representing the layout of the home page.
  */
-function HomePageLayout({onPressAdd}: PropsType): React.ReactElement {
+function HomePageLayout({
+  onPressAdd,
+  todoTasksData,
+}: PropsType): React.ReactElement {
   const {currentMonth, currentDate, currentWeek, initDone, initDate} =
     useDateStore();
   const {todoTasks} = useAppStore();
@@ -41,11 +44,12 @@ function HomePageLayout({onPressAdd}: PropsType): React.ReactElement {
         contentInset={HomePageLayoutStyles.spacer}
         showsVerticalScrollIndicator={false}>
         <CalendarHeader
+          testId="calendar-header"
           monthTitle={currentMonth}
           currentDate={currentDate}
           weekData={currentWeek}
         />
-        <CardGroup cardData={todoTasks} />
+        <CardGroup cardData={todoTasksData || todoTasks} />
       </ScrollView>
       <Footer onPressAdd={onPressAdd} />
     </View>

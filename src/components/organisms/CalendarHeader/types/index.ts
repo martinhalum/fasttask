@@ -10,6 +10,7 @@ export type WeekType = {
 };
 
 export type PropsType = {
+  testId?: string;
   monthTitle: String;
   weekData: WeekType[];
   currentDate: String;

@@ -27,11 +27,11 @@ function NavButtons({
   onRightPress,
 }: PropsType): React.ReactElement {
   return (
-    <View style={NavButtonsStyles.wrapper}>
-      <TouchableOpacity onPress={onLeftPress}>
+    <View testID="wrapper" style={NavButtonsStyles.wrapper}>
+      <TouchableOpacity testID="leftButton" onPress={onLeftPress}>
         <Icon name="chevron-left" size={18} />
       </TouchableOpacity>
-      <TouchableOpacity onPress={onRightPress}>
+      <TouchableOpacity testID="rightButton" onPress={onRightPress}>
         <Icon name="edit" size={18} />
       </TouchableOpacity>
     </View>
